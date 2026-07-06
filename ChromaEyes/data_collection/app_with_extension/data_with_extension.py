@@ -34,13 +34,13 @@ from selenium.webdriver.support import expected_conditions as EC
 USRPROFILE = '~/Library/Application Support/Google/Chrome/'
 
 
-# applications
+# applications example
 # url = "https://www.healthline.com/"
 url = "https://www.zoho.com/"
 
 #extension
-webdriver_path = "/chroma_eye/data_collection/chromedriver"
-base_path = "/chroma_eye/data_collection/extension"
+webdriver_path = "/ChromaEyes/data_collection/chromedriver"
+base_path = "/ChromaEyes/data_collection/extension"
 
 extension_path = os.path.join(base_path, "Dark Theme - Dark Reader for Chrome - Chrome Web Store 1.0.9.0.crx")
 add_blocker_path = os.path.join(base_path, "AdBlock — block ads across the web - Chrome Web Store 6.11.1.0.crx")
@@ -105,7 +105,7 @@ def take_screenshot(driver, folder_name, scroll_per, step):
 
 def save_screenshot_metadata(screenshot_id, page_title, page_url, application_name):
     # path to save the explored url
-    metadata_file = f'/chroma_eye/data_collection/meta_data/{application_name}.json'
+    metadata_file = f'/ChromaEyes/data_collection/meta_data{application_name}.json'
 
     # Initialize metadata structure
     metadata = {"applications": [], "screenshots": {}}

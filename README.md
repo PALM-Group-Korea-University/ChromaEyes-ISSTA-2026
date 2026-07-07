@@ -106,13 +106,13 @@ detection model
 ## Sensitivity Analysis 
 
 **IoU Sensitivity Analysis Screenshot Wise**
-![iou_sensitivity_analysis_screenshotwise.png](evaluation/sensetivity_analysis/iou_sensitivity_analysis_screenshotwise.png)
+![iou_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensetivity_analysis/iou_sensitivity_analysis_screenshotwise.png)
 
 **colDiff Sensitivity Analysis**
-![colDiff_sensitivity_analysis.png](evaluation/sensetivity_analysis/colDiff_sensitivity_analysis.png)
+![colDiff_sensitivity_analysis.png](statistical_analysis/sensetivity_analysis/colDiff_sensitivity_analysis.png)
 
 **areaDiff Sensitivity Analysis Screenshot Wise**
-![areaDiff_sensitivity_analysis_screenshotwise.png](evaluation/sensetivity_analysis/areaDiff_sensitivity_analysis_screenshotwise.png)
+![areaDiff_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensetivity_analysis/areaDiff_sensitivity_analysis_screenshotwise.png)
 
 ----
 
@@ -136,13 +136,13 @@ analysis. Two authors independently labeled the screenshot pairs as either consi
 <table>
 <tr>
 <td align="center" style="padding-right: 30px;">
-<img src="./evaluation/cohen_kappa/cohen_kappa2.png" width="260"><br>
+<img src="./statistical_analysis/cohen_kappa/cohen_kappa2.png" width="260"><br>
 (a) Confusion Matrix for 1,470 cases. The label 0 indicates the number of consistent pairs of screenshots
 decided by the rater. Similarly, 1 indicates the number of inconsistent pairs of screenshots.
 </td>
 
 <td align="center">
-<img src="./evaluation/cohen_kappa/cohen_kappa1.png" width="380"><br>
+<img src="./statistical_analysis/cohen_kappa/cohen_kappa1.png" width="380"><br>
 (b) Cohen’s Kappa Statistics. (𝑃𝑜 ) is the proportion of times the two raters actually agree. (𝑃𝑒 ) is the
 proportion of agreement expected purely by random chance. 
 </td>
@@ -175,7 +175,7 @@ proportion of agreement expected purely by random chance.
 
 - [example_dataset](example_dataset): sample dataset to run the quick detection
 - [llm_fewshot](llm_fewshot): few shot prompt with LLM api (gpt4.0, gemini-2.5, claude-opus-4, grok-4)
-- [evaluation](evaluation): cohen_kappa between two annotator; false positive and negatives; McNemar test ; sensitivity analysis for IoU, areaDiff, ColDiff for each parameter by ±10% and ±20% on randomly selected 323 pairs
+- [statistical_analysis](statistical_analysis): cohen_kappa between two annotator; false positive and negatives; McNemar test ; sensitivity analysis for IoU, areaDiff, ColDiff for each parameter by ±10% and ±20% on randomly selected 323 pairs
 
 
 

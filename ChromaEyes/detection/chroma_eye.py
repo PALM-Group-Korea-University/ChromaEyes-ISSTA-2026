@@ -586,22 +586,22 @@ def generate_inconsistency_report(screenshot_meta_information, edge_inconsistenc
 
 def main():
     # image with normal size
-    image_dir = '/chromaeye/example_dataset/edge_based/flashscore/input/image/org_size'
+    image_dir = '/example_dataset/edge_based_inconsistency/flashscore/input/image/org_size'
 
     # json file directory detected using upstage ocr
-    json_dir = '/chromaeye/example_dataset/edge_based/flashscore/input/ocr'
+    json_dir = '/example_dataset/edge_based_inconsistency/flashscore/input/ocr'
 
     # image directory, resize the image into uied(detection result)
-    uied_json_dir = '/chromaeye/example_dataset/edge_based/flashscore/input/uied_dl_json'
+    uied_json_dir = '/example_dataset/edge_based_inconsistency/flashscore/input/uied_dl_json'
 
     # json file directory from uied detection
-    uied_image_dir = '/chromaeye/example_dataset/edge_based/flashscore/input/image/uied_size'
+    uied_image_dir = '/example_dataset/edge_based_inconsistency/flashscore/input/image/uied_size'
 
     # meta information of the data that we have collected while collecting the dataset
-    screenshot_meta_data = '/chromaeye/example_dataset/edge_based/flashscore/input/flashscore.json'
+    screenshot_meta_data = '/example_dataset/edge_based_inconsistency/flashscore/input/flashscore.json'
 
     # output directory where you want to save the result
-    output_dir = '/chromaeye/example_dataset/edge_based/flashscore/output'
+    output_dir = '/example_dataset/edge_based_inconsistency/flashscore/output'
 
     inconsistency_detection(image_dir, json_dir, uied_image_dir, uied_json_dir, screenshot_meta_data, output_dir)
 

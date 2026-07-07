@@ -12,11 +12,11 @@ import numpy as np
 import os
 
 # Set your Upstage API key
-api_key = "please enter your apli key"
+api_key = "please enter your api key"
 
 # please pass the screenshot to detect the text using upstage ocr
-image_folder = "/chromaeye/example_dataset/edge_based/flashscore/input/image/org_size"
-output_folder = "/chromaeye/example_dataset/edge_based/flashscore/input/ocr"
+image_folder = "/example_dataset/edge_based_inconsistency/flashscore/input/image/org_size"
+output_folder = "/example_dataset/edge_based_inconsistency/flashscore/input/ocr"
 
 # Make sure the output folder exists
 if not os.path.exists(output_folder):

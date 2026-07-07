@@ -11,8 +11,8 @@ import cv2
 import os
 
 # please pass the absolute path
-input_folder = "/chromaeye/example_dataset/edge_based/flashscore/input/image/org_size"
-output_folder = "/chromaeye/example_dataset/edge_based/flashscore/input/image/uied_size"  # Folder to save results
+input_folder = "/example_dataset/edge_based_inconsistency/flashscore/input/image/org_size"
+output_folder = "/example_dataset/edge_based_inconsistency/flashscore/input/image/uied_size"  # Folder to save results
 
 # Create output folder if it doesn't exist
 if not os.path.exists(output_folder):

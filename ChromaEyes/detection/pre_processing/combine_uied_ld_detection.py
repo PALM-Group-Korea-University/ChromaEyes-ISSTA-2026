@@ -162,11 +162,11 @@ def combine_uied_detection(json_dir, image_dir, output_dir):
                 print(f"Skipping {filename}: Required filpanzoid not found.")
 
 # path to the uied size image
-image_dir = "/chromaeye/example_dataset/edge_based/flashscore/input/image/uied_size"
+image_dir = "/example_dataset/edge_based_inconsistency/flashscore/input/image/uied_size"
 # path to uied output json
-json_dir = "/chromaeye/example_dataset/edge_based/flashscore/input/uied"
+json_dir = "/example_dataset/edge_based_inconsistency/flashscore/input/uied"
 # path to save the result
-output_dir = "/chromaeye/example_dataset/edge_based/flashscore/input/uied_dl_json"
+output_dir = "/example_dataset/edge_based_inconsistency/flashscore/input/uied_dl_json"
 
 combine_uied_detection(json_dir, image_dir, output_dir)
 

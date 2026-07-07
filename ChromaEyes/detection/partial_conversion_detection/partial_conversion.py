@@ -126,7 +126,7 @@ def analyze_color_conversion(light_image, dark_image, json_path, output_image_pa
 
     # range for the dark mode background color
     dark_mode_low_range = [0, 0, 0]
-    dark_mode_high_range = [90, 90, 90]
+    dark_mode_high_range = [80, 80, 80]
 
     # Color range checks
     light_in_bright_range = is_color_in_range(light_dominant_color, light_mode_low_range, light_mode_high_range)

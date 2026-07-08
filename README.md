@@ -177,7 +177,7 @@ ChromaEyes dataset is available at [Zenodo](https://zenodo.org/records/17141637)
 
 ## Directory Structure
 
-The following directory structure provides an overview of the project's organization and the purpose of its main files and folders.
+The project is organization.
 
 ```text
 project/
@@ -237,7 +237,6 @@ project/
 - Chromedriver version: 139.0.7258.66 
 
 ### Requirement
-Before running the project, ensure the following requirements are met:
 
 - **Python 3**  
   Install the required Python packages:
@@ -263,13 +262,13 @@ Before running the project, ensure the following requirements are met:
 ### Reproduction
 
 **1. DataCollection**
-- Collect the dataset from applications that natively support both light and dark modes: run `native_app_datacollection.py
+- Collect the dataset from applications that natively support both light and dark modes: run `native_app_datacollection.py`
 - Collect the dataset from applications using dark mode conversion extension: run `data_with_extension.py`
 
 **2. Preprocessing**
 - Ensure that screenshot pairs correspond to the same UI state: [check_sc_pairs.py](ChromaEyes/detection/pre_processing/check_sc_pairs.py)
 - Text extraction from upstage OCR: [upstage_ocr.py](ChromaEyes/detection/pre_processing/upstage_ocr.py)
-- Detect GUI element using UIED detection - [UIED](https://github.com/MulongXie/UIED)
+- Detect GUI element using UIED detection: [UIED](https://github.com/MulongXie/UIED)
 - Run: [resize_image.py](ChromaEyes/detection/pre_processing/resize_image.py)
 - Run: [combine_uied_ld_detection.py](ChromaEyes/detection/pre_processing/combine_uied_ld_detection.py)
 

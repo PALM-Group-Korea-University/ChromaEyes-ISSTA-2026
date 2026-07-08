@@ -7,7 +7,7 @@ Replication package of ChromaEyes (ISSTA 2026)
 
 - [Overview](#embracing-the-dark-side-detecting-and-repairing-inconsistencies-between-light-and-dark-modes-of-web-applications)
 - [Inconsistency Example](#common-types-of-inconsistency-between-light-and-dark-mode)
-- [Results](#result-)
+- [Results](#results-)
 - [False Positives and Negatives](#false-positives-and-negatives)
 - [Statistical Analysis](#statistical-analysis)
 - [Dataset](#dataset)
@@ -121,13 +121,13 @@ detection model
 
 ### i. Sensitivity Analysis 
 
-**IoU Sensitivity Analysis Screenshot Wise**
+**a. IoU Sensitivity Analysis Screenshot Wise**
 ![iou_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensitivity_analysis/iou_sensitivity_analysis_screenshotwise.png)
 
-**colDiff Sensitivity Analysis**
+**b. colDiff Sensitivity Analysis**
 ![colDiff_sensitivity_analysis.png](statistical_analysis/sensitivity_analysis/colDiff_sensitivity_analysis.png)
 
-**areaDiff Sensitivity Analysis Screenshot Wise**
+**c. areaDiff Sensitivity Analysis Screenshot Wise**
 ![areaDiff_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensitivity_analysis/areaDiff_sensitivity_analysis_screenshotwise.png)
 
 ----

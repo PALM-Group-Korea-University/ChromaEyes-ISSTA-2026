@@ -7,12 +7,12 @@ Replication package of ChromaEyes (ISSTA 2026)
 
 - [Overview](#embracing-the-dark-side-detecting-and-repairing-inconsistencies-between-light-and-dark-modes-of-web-applications)
 - [Inconsistency Example](#common-types-of-inconsistency-between-light-and-dark-mode)
-- [Results](#results-)
+- [Result](#result)
 - [False Positives and Negatives](#false-positives-and-negatives)
 - [Statistical Analysis](#statistical-analysis)
 - [Dataset](#dataset)
 - [Directory Structure](#directory-structure)
-- [Replication](#replication-)
+- [Replication](#replication)
 
 
 ----
@@ -63,7 +63,7 @@ on the detected objects.
 
 
 
-## Results 
+## Result 
 ChromaEyes is evaluated  on 2,009 screenshot
 pairs captured from 196 real web applications (147 with native dark mode support and 49 with browser
 extension-based conversion). ChromaEyes achieves 96.19% accuracy at the screenshot level and 97.95% at

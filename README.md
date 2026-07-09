@@ -5,9 +5,11 @@ Replication package of ChromaEyes (ISSTA 2026)
 
 ## Table of Contents
 
-- [Overview](#embracing-the-dark-side-detecting-and-repairing-inconsistencies-between-light-and-dark-modes-of-web-applications)
-- [Inconsistency Example](#common-types-of-inconsistency-between-light-and-dark-mode)
-- [Result](#result)
+- [Introduction](#embracing-the-dark-side-detecting-and-repairing-inconsistencies-between-light-and-dark-modes-of-web-applications)
+- [Our Approach](#our-approach)
+- [Inconsistency between Light and Dark mode](#inconsistency-between-light-and-dark-mode)
+- [Experimental Setup](#experimental-setup)
+- [Results](#results-)
 - [False Positives and Negatives](#false-positives-and-negatives)
 - [Statistical Analysis](#statistical-analysis)
 - [Dataset](#dataset)
@@ -20,20 +22,35 @@ Replication package of ChromaEyes (ISSTA 2026)
 #  ChromaEyes: Detecting Inconsistencies of User Interface Elements between Light and Dark Modes of Web Applications
 
 
-![overview.png](asset/overview.png)
-
-ChromaEyes detects GUI inconsistency between light and dark mode in web applications. 
+**ChromaEyes** detects GUI inconsistency between light and dark mode in web applications. 
 The term inconsistency refer to a GUI state where its elements are well-designed in light mode,
 appearing visually cohesive, functional, and aligned with brand identity, but in dark mode, they
 may be poorly crafted, with low-quality graphics, weak contrast, and disrupted brand aesthetics (or vice versa).
 ChromaEyes detects four types of inconsistency.
 
-The four types of inconsistency are:layout inconsistencies based
-on the detected edges, GUI widget elements (object and text) inconsistencies based on the
-detected edge, object, and text information, and incomplete conversion inconsistencies based
-on the detected objects.
 
-### Common types of inconsistency between light and dark mode
+
+
+## Our Approach
+
+![overview.png](asset/overview.png)
+
+<p align="center">
+<i>Figure 1. Overview of ChromaEyes, our inconsistency detection approach..</i>
+</p>
+
+Our approach, **ChromaEyes**, detects inconsistencies between light and dark modes, as shown
+in Figure 1. **ChromaEyes** takes the URL of the target web application as input, and automated
+navigation is recorded and repeated in both the light and dark modes to capture screenshot pairs
+of the target application. The screenshot pairs are first fed into detectors that localize three
+different GUI elements: objects, text, and edges. The approach identifies the (1) layout
+inconsistencies based on the detected edges, (2) GUI widget elements (object and text)
+inconsistencies based on the detected edge, object, and text information, and (3) incomplete
+conversion inconsistencies based on the detected objects. Figure 2 shows examples of these
+inconsistencies, where problematic elements are highlighted by red bounding boxes
+
+
+### Inconsistency between Light and Dark mode
 <table>
 <tr>
 <td align="center" style="padding-right: 30px;">
@@ -59,11 +76,70 @@ on the detected objects.
 </td>
 </tr>
 </table>
+<p align="center">
+<i>Figure 2. Common types of inconsistencies between light and dark modes of real web applications.</i>
+</p>
 
 
+## Experimental Setup
+
+### Research Question
+
+**(1) RQ1. (Detection)** How effective is ChromaEyes at detecting inconsistencies between the light
+and dark mode of real web applications?
+
+**(2) RQ2. (Comparison)** Does ChromaEyes outperform vision language models and accessibility testing tools 
+
+**(3) RQ3. (Dark mode extensions)** How effective is ChromaEyes at detecting inconsistencies of
+the dark mode converted by browser extensions?
+
+### Subjects
+To answer RQ1 and RQ2, dataset are collected from 147 real web applications with explicit light
+and dark mode switching.
+
+To answer RQ3, have 49 (=7 × 7) combinations as additional applications are collected which consist of 7 popular application with that supported the light mode only with 7 dark mode conversion extension.
+
+In total, 2009 light and dark mode screenshots paris are collected. 
+
+### Metrics
+For Inconsistency detection, accuracy, precision, recall, and F1-score are used as it can be regarded as a binary classification problem.
+
+### Ground truth 
+Two authors independently labeled the screenshot pairs as either consistent or inconsistent and statistically quantify the
+inter-rater reliability, by computing Cohen’s kappa. 
+
+<table>
+<tr>
+<td align="center" style="padding-right: 30px;">
+<img src="./statistical_analysis/cohen_kappa/cohen_kappa2.png" width="260"><br>
+(a) Confusion Matrix for 1,470 cases. The label 0 indicates the number of consistent pairs of screenshots
+decided by the rater. Similarly, 1 indicates the number of inconsistent pairs of screenshots.
+</td>
+
+<td align="center">
+<img src="./statistical_analysis/cohen_kappa/cohen_kappa1.png" width="380"><br>
+(b) Cohen’s Kappa Statistics. (𝑃𝑜 ) is the proportion of times the two raters actually agree. (𝑃𝑒 ) is the
+proportion of agreement expected purely by random chance. 
+</td>
+</tr>
+
+</table>
+<p align="center">
+<i>Figure 3. Cohen’s Kappa.</i>
+</p>
+
+### Baseline
+To answer RQ2, four popular language models; gpt-4o of OpenAI,
+gemini-2.5-pro of Google, claude-opus-4 of Anthropic, and grok-4.2-reasoning of xAI with few-shot prompt are employed to identify whether the pairs of screenshot are consistent or not. 
+
+In addition, two accessibility detectors OwlEye and axe DevTools are also used to detect the inconsistency.
+
+>Note: There are no available techniques to compare with ChromaEyes side-by-side, to the best of
+our knowledge. 
 
 
-## Result 
+----
+## Results 
 ChromaEyes is evaluated  on 2,009 screenshot
 pairs captured from 196 real web applications (147 with native dark mode support and 49 with browser
 extension-based conversion). ChromaEyes achieves 96.19% accuracy at the screenshot level and 97.95% at
@@ -74,10 +150,17 @@ accessibility issue detectors (e.g., OwlEye, axe DevTools).
 
 ![ChromaEyesresult.png](asset/rq1.png)
 
+<p align="center">
+<i>Table 1. Detection results of 147 web applications
+with explicit mode conversion support.</i>
+</p>
 
 ### RQ2: Comparison with vision language models and accessibility issue detectors
 ![baseline_comparision.png](asset/rq2.png)
 
+<p align="center">
+<i>Table 2. Detection results of ChromaEyes, vision language models, and accessibility issue detectors.</i>
+</p>
 
 **Runtime cost of ChromaEyes and other tools**
 
@@ -92,6 +175,11 @@ accessibility issue detectors (e.g., OwlEye, axe DevTools).
 ### RQ3: Inconsistency Detection when Extensions are Applied
 
 ![rq3.png](asset/rq3.png)
+
+<p align="center">
+<i>Table 3. Detection results of 49 combinations of 7 apps only with the light mode
+and 7 dark-mode conversion extensions. </i>
+</p>
 
 ----
 
@@ -114,6 +202,10 @@ detection model
 
 </table>
 
+<p align="center">
+<i>Figure 4. False Positives and Negatives.</i>
+</p>
+
 
 ----
 
@@ -121,14 +213,31 @@ detection model
 
 ### i. Sensitivity Analysis 
 
-**a. IoU Sensitivity Analysis Screenshot Wise**
+**a. IoU**
+
 ![iou_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensitivity_analysis/iou_sensitivity_analysis_screenshotwise.png)
 
-**b. colDiff Sensitivity Analysis**
+<p align="center">
+<i>Figure 5. IoU Sensitivity Analysis Screenshot Wise.</i>
+</p>
+
+**b. colDiff**
+
 ![colDiff_sensitivity_analysis.png](statistical_analysis/sensitivity_analysis/colDiff_sensitivity_analysis.png)
 
-**c. areaDiff Sensitivity Analysis Screenshot Wise**
+
+<p align="center">
+<i>Figure 6. colDiff Sensitivity Analysis.</i>
+</p>
+
+**c. areaDiff**
+
 ![areaDiff_sensitivity_analysis_screenshotwise.png](statistical_analysis/sensitivity_analysis/areaDiff_sensitivity_analysis_screenshotwise.png)
+
+
+<p align="center">
+<i>Figure 6. areaDiff Sensitivity Analysis Screenshot Wise.</i>
+</p>
 
 ----
 
@@ -140,31 +249,13 @@ incorrectly detects. For all pairs (i.e., ChromaEyes vs. another tool), the p-va
 
 ![mcnemar.png](asset/mcnemar.png)
 
+<p align="center">
+<i>Table 4. McNemarTest.</i>
+</p>
+
 ----
 
-###  iii. Inter-rater reliability metrics (Cohen's kappa)
-To strengthen the reliability of our ground-truth labels, we added an explicit inter-rater reliability
-analysis. Two authors independently labeled the screenshot pairs as either consistent or inconsistent.
 
-
-
-
-<table>
-<tr>
-<td align="center" style="padding-right: 30px;">
-<img src="./statistical_analysis/cohen_kappa/cohen_kappa2.png" width="260"><br>
-(a) Confusion Matrix for 1,470 cases. The label 0 indicates the number of consistent pairs of screenshots
-decided by the rater. Similarly, 1 indicates the number of inconsistent pairs of screenshots.
-</td>
-
-<td align="center">
-<img src="./statistical_analysis/cohen_kappa/cohen_kappa1.png" width="380"><br>
-(b) Cohen’s Kappa Statistics. (𝑃𝑜 ) is the proportion of times the two raters actually agree. (𝑃𝑒 ) is the
-proportion of agreement expected purely by random chance. 
-</td>
-</tr>
-
-</table>
 
 ---
 

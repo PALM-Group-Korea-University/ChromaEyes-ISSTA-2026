@@ -239,7 +239,6 @@ detection model
 <i>Figure 6. areaDiff Sensitivity Analysis Screenshot Wise.</i>
 </p>
 
-----
 
 ### ii. McNemarTest
  The results are statistically tested by McNemar’s test, the detection is a binary classification, there are four different outcomes:
@@ -253,17 +252,13 @@ incorrectly detects. For all pairs (i.e., ChromaEyes vs. another tool), the p-va
 <i>Table 4. McNemarTest.</i>
 </p>
 
-----
-
-
-
 ---
 
 ## Dataset
 
 ChromaEyes dataset is available at [Zenodo](https://zenodo.org/records/17141637)
 
------
+
 
 
 ## Directory Structure

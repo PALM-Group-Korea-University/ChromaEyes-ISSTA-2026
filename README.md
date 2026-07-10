@@ -80,6 +80,7 @@ inconsistencies, where problematic elements are highlighted by red bounding boxe
 <i>Figure 2. Common types of inconsistencies between light and dark modes of real web applications.</i>
 </p>
 
+---
 
 ## Experimental Setup
 
@@ -259,7 +260,7 @@ incorrectly detects. For all pairs (i.e., ChromaEyes vs. another tool), the p-va
 ChromaEyes dataset is available at [Zenodo](https://zenodo.org/records/17141637)
 
 
-
+----
 
 ## Directory Structure
 
@@ -366,5 +367,5 @@ project/
 ----
 ## Thank you!
 
-----
+
 

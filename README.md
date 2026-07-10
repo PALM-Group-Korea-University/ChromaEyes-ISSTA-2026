@@ -33,7 +33,7 @@ ChromaEyes detects four types of inconsistency.
 
 ## Our Approach
 
-![overview.png](asset/overview.png)
+![overview.png](asset/chromaeyes_overview.png)
 
 <p align="center">
 <i>Figure 1. Overview of ChromaEyes, our inconsistency detection approach..</i>
